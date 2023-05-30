@@ -1,17 +1,20 @@
 .navbar {
+    padding: 0px;
     display: flex;
     flex-direction: column;
     gap: 1em;
     padding: 1em;
+    background-color: #232b2be0 ;
   }
   
   .nav-link {
+    font-size: 20px;
     text-decoration: none;
-    color: black;
+    color:white;
   }
   
   .nav-link.active {
-    color: blue;
+    color: rgb(230, 145, 34);
   }
   
   @media (min-width: 600px) {
@@ -20,3 +23,8 @@
     }
   }
   
+.logo {
+  width: 500px;
+  height:500px;
+  margin-right: 1em;
+}
