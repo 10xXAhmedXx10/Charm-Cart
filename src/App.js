@@ -11,7 +11,7 @@ import Beauty from "./pages/Beauty"
 import Music from "./pages/Music"
 import Smartphone from "./pages/Smartphones"
 import Menfashion from "./pages/Menfashion"
-import Kidsfashion from "./pages/Smartphones"
+import Kidsfashion from "./pages/Kidsfashion"
 import Tablets from "./pages/Tablets"
 
 
@@ -22,7 +22,6 @@ function App() {
     return (
         <Router>
           <Navbar />
-            
             <Routes>
 
                 <Route path="/home" element={<Home />} /> 
