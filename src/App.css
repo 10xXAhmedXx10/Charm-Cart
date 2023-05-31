@@ -1,3 +1,8 @@
+.registration {
+  background-color: #131921;
+}
+
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -57,3 +62,76 @@
     display: flex;
   }
 }
+
+
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+
+.registration-options {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  width: 300px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.registration-options h2 {
+  margin-bottom: 30px;
+  color: #333;
+  font-size: 24px;
+}
+
+.registration-options input[type="radio"] {
+  margin: 10px;
+}
+
+.registration-options label {
+  font-size: 18px;
+  color: #555;
+}
+
+.registration-options button {
+  margin-top: 30px;
+  padding: 15px;
+  background-color: #008CBA;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  width: 100%;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.registration-options button:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.user-image-container {
+  width: 50vw;
+  height: 92vh;
+  float: left;
+  overflow: hidden;
+}
+
+.userimg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
