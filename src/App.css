@@ -1,6 +1,3 @@
-
-
-
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -30,6 +27,7 @@
   padding: 10px;
   font-size: 14px;
   white-space: nowrap;
+  border: 1px solid white;
 }
 
 .nav-link-special:hover {
