@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ReactPlayer from 'react-player';
 import { useNavigate } from 'react-router-dom';
 
-function Registration() {
+function Registrationorlog() {
   const [userType, setUserType] = useState(null);
   const navigate = useNavigate();
 
@@ -14,6 +14,10 @@ function Registration() {
     } else {
       alert("Please select a user type before proceeding.");
     }
+  }
+
+  const handleLogin = () => {
+    navigate('/login');
   }
 
   return (
@@ -36,10 +40,12 @@ function Registration() {
         <label htmlFor="user">User</label><br/>
         <input type="radio" id="business" name="userType" value="business" onChange={() => setUserType('business')} />
         <label htmlFor="business">Business</label><br/>
-        <button onClick={handleSubmit}>Take me</button>
+        <button onClick={handleSubmit}>Register</button>
+       <h2>OR</h2>
+         <button onClick={handleLogin} style={{marginTop: '-10px'}}>log in</button>
       </div>
     </div>
   );
 }
 
-export default Registration;
+export default Registrationorlog;

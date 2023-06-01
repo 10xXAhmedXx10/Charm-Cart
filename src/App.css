@@ -1,6 +1,4 @@
-.registration {
-  background-color: #131921;
-}
+
 
 
 .navbar {
@@ -9,7 +7,7 @@
   align-items: center;
   padding: 1em;
   background-color: #131921;
-  height: 70px; 
+  height: 55px; 
 }
 
 .logo {
@@ -23,6 +21,23 @@
 .nav-links {
   display: flex;
   gap: 15px;
+}
+
+.nav-link-special {
+  color: white;
+  text-decoration: none;
+  margin-right: 10px;
+  padding: 10px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.nav-link-special:hover {
+  color: #c45500;
+}
+
+.nav-link-special.active {
+color: gray
 }
 
 .nav-link {
@@ -122,8 +137,8 @@
 }
 
 .user-image-container {
-  width: 50vw;
-  height: 92vh;
+  width: 45vw;
+  height: 93.3vh;
   float: left;
   overflow: hidden;
 }
@@ -134,4 +149,52 @@
   object-fit: cover;
 }
 
+.head {
+  position: relative;
+  right: -189px;
+}
 
+.create-account {
+  text-align: center;
+}
+
+.form {
+  position: absolute;
+  right: 380px;
+  bottom: 500px;
+  width: 20vw;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: auto;
+  border:2px solid gray;
+  border-radius: 30px
+}
+
+
+
+.form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.form button {
+  padding: 10px 20px;
+  background: #f0c14b;
+  border: 1px solid;
+  border-color: #a88734 #9c7e31 #846a29;
+  cursor: pointer;
+  width: 100%;
+}
+
+
+.background {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 60%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; 
+}

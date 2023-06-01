@@ -2,7 +2,7 @@ import React from "react";
 
 
 function account() {
-    return <h1> </h1>
+    return <h1> Hello</h1>
 }
 
 

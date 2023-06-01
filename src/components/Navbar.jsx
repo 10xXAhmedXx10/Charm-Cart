@@ -46,7 +46,10 @@ const Navbar = () => {
           <NavLink exact to="/tablets" activeClassName="active" className="nav-link" onClick={closeMenu} >
           Tablets
           </NavLink>
-          <NavLink to="/account" activeClassName="active" className="nav-link" onClick={closeMenu} >
+          <NavLink to="/registerorlog" activeClassName="active" className="nav-link-special" onClick={closeMenu} >
+            Register/log in
+          </NavLink>
+          <NavLink to="/account" activeClassName="active" className="nav-link-special" onClick={closeMenu} >
             Account
           </NavLink>
         </div>

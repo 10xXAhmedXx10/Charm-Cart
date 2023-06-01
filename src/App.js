@@ -13,8 +13,9 @@ import Smartphone from "./pages/Smartphones"
 import Menfashion from "./pages/Menfashion"
 import Kidsfashion from "./pages/Kidsfashion"
 import Tablets from "./pages/Tablets"
+import Registerorlog from "./components/Registerorlog"
 
-import Registration from "./components/Registration";
+
 
 import Userregister from "./components/Userregister";
 
@@ -32,7 +33,8 @@ function App() {
         <Router>
           <Navbar />
             <Routes>
-                <Route path="/registration" element={<Registration />} />
+                <Route path='/registerorlog' element={<Registerorlog />} />
+
                 <Route path="/userregister" element={<Userregister />} /> 
                 <Route path="/home" element={<Home />} /> 
                 <Route path="/womenfashion" element={<Womenfashion />} />
