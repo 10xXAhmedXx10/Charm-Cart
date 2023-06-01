@@ -8,9 +8,9 @@ function Registrationorlog() {
 
   const handleSubmit = () => {
     if(userType === 'user') {
-      navigate('/Userregister');
+      navigate('/userregistration');
     } else if(userType === 'business') {
-      navigate('/businessRegistration');
+      navigate('/businessregistration');
     } else {
       alert("Please select a user type before proceeding.");
     }

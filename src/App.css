@@ -196,3 +196,16 @@ color: gray
   object-fit: cover;
   z-index: -1; 
 }
+
+.select {
+  font-size: 20px;
+  text-align: center;
+  margin: 10px;
+  margin-left: 100px;
+}
+
+
+.typeofproduct {
+  font-size: 20px;
+  margin-left: 100px;
+}

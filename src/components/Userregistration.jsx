@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-function Userregister() {
+function Userregistration() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -51,4 +51,4 @@ function Userregister() {
   );
 }
 
-export default Userregister;
+export default Userregistration;

@@ -17,7 +17,8 @@ import Registerorlog from "./components/Registerorlog"
 
 
 
-import Userregister from "./components/Userregister";
+import Userregistration from "./components/Userregistration";
+import Businessregistration from "./components/Businessregistration";
 
 
 import Navbar from './components/Navbar';
@@ -27,16 +28,19 @@ function App() {
     return (
 
 
-        
-        
+
+
 
         <Router>
-          <Navbar />
+            <Navbar />
             <Routes>
                 <Route path='/registerorlog' element={<Registerorlog />} />
 
-                <Route path="/userregister" element={<Userregister />} /> 
-                <Route path="/home" element={<Home />} /> 
+                <Route path="/userregistration" element={<Userregistration />} />
+
+                < Route path='/businessregistration' element={<Businessregistration />} />
+
+                <Route path="/home" element={<Home />} />
                 <Route path="/womenfashion" element={<Womenfashion />} />
                 <Route path="/beauty" element={<Beauty />} />
                 <Route path="/clinic" element={<Clinic />} />
@@ -51,10 +55,10 @@ function App() {
                 <Route path="/account" element={<Account />} />
             </Routes>
 
-            
+
 
         </Router>
-        
+
     );
 }
 
