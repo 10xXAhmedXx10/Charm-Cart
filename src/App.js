@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+
 import Home from "./pages/Home"
 import Account from './pages/Account';
 import Womenfashion from './pages/Womenfashion';
@@ -14,6 +15,7 @@ import Menfashion from "./pages/Menfashion"
 import Kidsfashion from "./pages/Kidsfashion"
 import Tablets from "./pages/Tablets"
 import Registerorlog from "./components/Registerorlog"
+import Login from './components/Login';
 
 
 
@@ -34,11 +36,12 @@ function App() {
         <Router>
             <Navbar />
             <Routes>
+
+                <Route path="/" element={<Navigate to="/Home" />} />
+                <Route path='/login' element={<Login />} />
                 <Route path='/registerorlog' element={<Registerorlog />} />
-
                 <Route path="/userregistration" element={<Userregistration />} />
-
-                < Route path='/businessregistration' element={<Businessregistration />} />
+                <Route path='/businessregistration' element={<Businessregistration />} />
 
                 <Route path="/home" element={<Home />} />
                 <Route path="/womenfashion" element={<Womenfashion />} />

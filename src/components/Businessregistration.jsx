@@ -1,23 +1,27 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
+import { useNavigate } from 'react-router-dom'; 
 function Businessregistration() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [businessType, setBusinessType] = useState('');
+  const [productType, setproductType] = useState('');
+  const navigate = useNavigate(); 
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:5000/register', { name, email, password, businessType });
+      const response = await axios.post('http://localhost:5000/businessregister', { name, email, password, productType });
 
-      console.log(response.data);
+  
+      if (response.status === 200) {
+        navigate('/login');
+      }
     } catch (error) {
       console.error(error);
     }
-  };
+  }
 
   return (
     <div>
@@ -48,7 +52,7 @@ function Businessregistration() {
           <label className='typeofproduct'>
             Type of Product You Are Selling:
             <br />
-            <select className='select' value={businessType} onChange={e => setBusinessType(e.target.value)} required>
+            <select className='select' value={productType} onChange={e => setproductType(e.target.value)} required>
               <option value="">--Please choose an option--</option>
               <option value="General">General</option>
               <option value="Fashion">Fashion</option>

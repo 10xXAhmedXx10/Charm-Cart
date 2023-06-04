@@ -1,22 +1,26 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
-function Userregistration() {
+import { useNavigate } from 'react-router-dom'; 
+function UserRegistration() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
+  const navigate = useNavigate(); 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:5000/register', { name, email, password });
-
+      const response = await axios.post('http://localhost:5000/userregistration', { name, email, password });
       console.log(response.data);
+      
+
+      if (response.status === 200) {
+        navigate('/login');
+      }
     } catch (error) {
       console.error(error);
     }
-  };
+  }
 
   return (
     <div>
@@ -51,4 +55,4 @@ function Userregistration() {
   );
 }
 
-export default Userregistration;
+export default UserRegistration;

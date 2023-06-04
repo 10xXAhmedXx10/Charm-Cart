@@ -13,7 +13,8 @@ const Navbar = () => {
   return (
     <nav className="navbar">
        <div>
-        <a href="/home"><img className='logo' src='/assets/images/logo.svg' height={"300px"} alt='Logo' /></a> 
+       <a href="/home"><img className='logo' src='/assets/images/logo.png' height={"200px"}  alt='Logo' /></a>
+
       </div>
       <div className='menu-icon' onClick={() => setIsOpen(!isOpen)}>
         <img src={`/assets/images/${isOpen ? 'hamburger.close.svg' : 'hamburger-menu.svg'}`} alt="Menu" className="hamburger-menu"/>
