@@ -23,20 +23,20 @@ import Userregistration from "./components/Userregistration";
 import Businessregistration from "./components/Businessregistration";
 
 
+
+import Footer from './components/Footer';
+
+
 import Navbar from './components/Navbar';
 import "./App.css"
 
+
+
 function App() {
     return (
-
-
-
-
-
         <Router>
             <Navbar />
             <Routes>
-
                 <Route path="/" element={<Navigate to="/Home" />} />
                 <Route path='/login' element={<Login />} />
                 <Route path='/registerorlog' element={<Registerorlog />} />
@@ -57,12 +57,9 @@ function App() {
                 <Route path="/tablets" element={<Tablets />} />
                 <Route path="/account" element={<Account />} />
             </Routes>
-
-
-
+            <Footer />
         </Router>
-
     );
 }
 
-export default App;
+export default App
