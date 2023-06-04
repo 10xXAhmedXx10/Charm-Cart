@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
        <div>
-       <a href="/home"><img className='logo' src='/assets/images/logo.png' height={"200px"}  alt='Logo' /></a>
+       <a href="/home"><img className='logo' src='/assets/images/logo.png' height={"130px"}  alt='Logo' /></a>
 
       </div>
       <div className='menu-icon' onClick={() => setIsOpen(!isOpen)}>
@@ -47,12 +47,15 @@ const Navbar = () => {
           <NavLink exact to="/tablets" activeClassName="active" className="nav-link" onClick={closeMenu} >
           Tablets
           </NavLink>
-          <NavLink to="/registerorlog" activeClassName="active" className="nav-link-special" onClick={closeMenu} >
+          <NavLink exact to="/registerorlog" activeClassName="active" className="nav-link-special" onClick={closeMenu} >
             Register/log in
           </NavLink>
-          <NavLink to="/account" activeClassName="active" className="nav-link-special" onClick={closeMenu} >
+          <NavLink exact to="/account" activeClassName="active" className="nav-link-special" onClick={closeMenu} >
             Account
           </NavLink>
+          <NavLink exact to="/cart" activeClassName="active" className="" onClick={closeMenu}>
+          <img src="assets/images/cart.png" height={"40px"} alt="shopping cart" />
+        </NavLink>
         </div>
     </nav>
   );

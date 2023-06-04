@@ -16,7 +16,7 @@ import Kidsfashion from "./pages/Kidsfashion"
 import Tablets from "./pages/Tablets"
 import Registerorlog from "./components/Registerorlog"
 import Login from './components/Login';
-
+import Cart from "./components/Cart"
 
 
 import Userregistration from "./components/Userregistration";
@@ -42,7 +42,7 @@ function App() {
                 <Route path='/registerorlog' element={<Registerorlog />} />
                 <Route path="/userregistration" element={<Userregistration />} />
                 <Route path='/businessregistration' element={<Businessregistration />} />
-
+                <Route path='/cart' element={<Cart />} />
                 <Route path="/home" element={<Home />} />
                 <Route path="/womenfashion" element={<Womenfashion />} />
                 <Route path="/beauty" element={<Beauty />} />
