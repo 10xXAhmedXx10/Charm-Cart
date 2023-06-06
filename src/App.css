@@ -1,3 +1,5 @@
+
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -88,8 +90,8 @@
 
 
 .registration-options {
-  position: absolute;
-  top: 50%;
+  position: relative;
+  margin-top: 39.2rem;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #fff;
