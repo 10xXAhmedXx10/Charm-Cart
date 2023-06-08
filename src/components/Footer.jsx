@@ -8,7 +8,7 @@ const Footer = () => {
                     <div className="website">
                         <h3>Website</h3>
                         <ul>
-                            <li><a href="/">About</a></li>
+                            <li><a href="/About">About</a></li>
                         </ul>
                     </div>
                     <div className="support">

@@ -17,7 +17,7 @@ import Tablets from "./pages/Tablets"
 import Registerorlog from "./components/Registerorlog"
 import Login from './components/Login';
 import Cart from "./components/Cart"
-
+import About from './pages/About';
 
 import Userregistration from "./components/Userregistration";
 import Businessregistration from "./components/Businessregistration";
@@ -56,6 +56,7 @@ function App() {
                 <Route path="/books" element={<Books />} />
                 <Route path="/tablets" element={<Tablets />} />
                 <Route path="/account" element={<Account />} />
+                <Route path='/about' element= {<About />} />
             </Routes>
             <Footer />
         </Router>
