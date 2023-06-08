@@ -1,5 +1,3 @@
-
-
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -89,11 +87,21 @@
 }
 
 
+.main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-wrap {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 .registration-options {
-  position: relative;
-  margin-top: 39.2rem;
-  left: 50%;
-  transform: translate(-50%, -50%);
   background-color: #fff;
   padding: 40px;
   border-radius: 12px;
@@ -140,12 +148,26 @@
 
 .user-image-container {
   width: 45vw;
-  height: 93.3vh;
+  height: 100vh;
+  float: left;
+  overflow: hidden;
+}
+
+
+.business-image-container {
+  width: 45vw;
+  height: 100vh;
   float: left;
   overflow: hidden;
 }
 
 .userimg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.businessimg {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -196,7 +218,7 @@
   right: 0;
   top: 0;
   width: 60%;
-  height: 100%;
+  height: 115vh;
   object-fit: cover;
   z-index: -1;
 }
@@ -221,6 +243,7 @@
   background-color: #131921;
   color: white;
   padding: 15px 0;
+  flex-shrink: 0;
 }
 
 

@@ -26,10 +26,11 @@ function Businessregistration() {
   return (
     <div>
       <img className='background' src="/assets/images/techbackground.jpeg" alt="background" />
-      <div className="user-image-container">
-        <img className="userimg" src="/assets/images/business.webp" alt="user img" />
+      <div className="business-image-container">
+        <img className="businessimg" src="/assets/images/business.webp" alt="user img" />
       </div>
-      
+      <div className="main-container">
+        <div className="content-wrap"></div>
       <div className="form">
         <h1 className='create-account'>Create account</h1>
         <img className='head' src="/assets/images/businesshead.svg" height={"70px"} alt="person-head" />
@@ -63,6 +64,7 @@ function Businessregistration() {
 
           <button type="submit">Register</button>
         </form>
+      </div>
       </div>
     </div>
   );
