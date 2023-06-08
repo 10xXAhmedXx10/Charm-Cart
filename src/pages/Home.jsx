@@ -104,26 +104,39 @@ const Data = [
 ];
 
 
-function homePage() {
-    return <div>
-        <div className="video-container">
-            <video src="assets/videos/homepagebackground.mp4" autoPlay muted loop></video>
-        </div>
-        <div className='posts-container'>
-            {Data.map(post => (
-                <div className='post' key={post.id}>
-                    <h2 className="posttitle">{post.title}</h2>
-                    <img src={post.img} alt={post.title} />
-                    <div className="priceandstart">
-                        <p>{post.price}</p>
-                        <p>{post.star}</p>
-                    </div>
-                </div>
-            ))}
-        </div>
-    </div>
-
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
 }
+
+
+function homePage() {
+    const shuffledData = shuffleArray([...Data]);
+
+    return (
+        <div>
+            <div className="video-container">
+                <video src="assets/videos/homepagebackground.mp4" autoPlay muted loop></video>
+            </div>
+            <div className='posts-container'>
+                {shuffledData.map(post => (
+                    <div className='post' key={post.id}>
+                        <h2 className="posttitle">{post.title}</h2>
+                        <img src={post.img} alt={post.title} />
+                        <div className="priceandstart">
+                            <p>{post.price}</p>
+                            <p>{post.star}</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    )
+}
+
 
 
 export default homePage;
