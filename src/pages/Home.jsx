@@ -126,7 +126,7 @@ function homePage() {
                     <div className='post' key={post.id}>
                         <h2 className="posttitle">{post.title}</h2>
                         <img src={post.img} alt={post.title} />
-                        <div className="priceandstart">
+                        <div className="priceandstar">
                             <p>{post.price}</p>
                             <p>{post.star}</p>
                         </div>

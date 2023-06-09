@@ -24,7 +24,7 @@ function Registrationorlog() {
     <div>
       <div className="video-background">
         <ReactPlayer
-          url="/assets/videos/background.mp4"
+          url="/assets/videos/registerpagebackground.mp4"
           playing={true}
           loop={true}
           controls={false}
