@@ -54,7 +54,7 @@ const Navbar = () => {
             Account
           </NavLink>
           <NavLink exact to="/cart" activeClassName="active" className="" onClick={closeMenu}>
-          <img src="assets/images/cart.png" height={"40px"} alt="shopping cart" />
+          <img src="/assets/images/cart.png" height={"40px"} alt="shopping cart" />
         </NavLink>
         </div>
     </nav>

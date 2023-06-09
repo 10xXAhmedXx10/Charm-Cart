@@ -18,11 +18,11 @@ import Registerorlog from "./components/Registerorlog"
 import Login from './components/Login';
 import Cart from "./components/Cart"
 import About from './pages/About';
-
+import Thestory from './pages/Thestory';
 import Userregistration from "./components/Userregistration";
 import Businessregistration from "./components/Businessregistration";
 
-
+import Thestorypage from './thestorypages/Thestorypage';
 
 import Footer from './components/Footer';
 
@@ -37,6 +37,8 @@ function App() {
         <Router>
             <Navbar />
             <Routes>
+                <Route path='/Thestorypage' element={<Thestorypage />} />
+                <Route path='/Thestory' element={<Thestory />} />
                 <Route path="/" element={<Navigate to="/Home" />} />
                 <Route path='/login' element={<Login />} />
                 <Route path='/registerorlog' element={<Registerorlog />} />
