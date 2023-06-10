@@ -2,10 +2,10 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 
 import Home from "./pages/Home"
-import Account from './pages/Account';
+
 import Womenfashion from './pages/Womenfashion';
 import Books from "./pages/Books"
-import Clinic from "./pages/Clinic"
+
 import Health from "./pages/Health"
 import Movies from "./pages/Movies"
 import Beauty from "./pages/Beauty"
@@ -23,6 +23,7 @@ import Userregistration from "./components/Userregistration";
 import Businessregistration from "./components/Businessregistration";
 
 import Thestorypage from './thestorypages/Thestorypage';
+import CreatePost from './components/CreatePost';
 
 import Footer from './components/Footer';
 
@@ -37,8 +38,10 @@ function App() {
         <Router>
             <Navbar />
             <Routes>
-                <Route path='/Thestorypage' element={<Thestorypage />} />
+
+                <Route path='/Createpost' element={<CreatePost />} />
                 <Route path='/Thestory' element={<Thestory />} />
+                <Route path='/Thestorypage' element={<Thestorypage />} />
                 <Route path="/" element={<Navigate to="/Home" />} />
                 <Route path='/login' element={<Login />} />
                 <Route path='/registerorlog' element={<Registerorlog />} />
@@ -47,8 +50,7 @@ function App() {
                 <Route path='/cart' element={<Cart />} />
                 <Route path="/home" element={<Home />} />
                 <Route path="/womenfashion" element={<Womenfashion />} />
-                <Route path="/beauty" element={<Beauty />} />
-                <Route path="/clinic" element={<Clinic />} />
+           
                 <Route path="/health" element={<Health />} />
                 <Route path="/Kidsfashion" element={<Kidsfashion />} />
                 <Route path="/menfashion" element={<Menfashion />} />
@@ -57,7 +59,7 @@ function App() {
                 <Route path="/smartphones" element={<Smartphone />} />
                 <Route path="/books" element={<Books />} />
                 <Route path="/tablets" element={<Tablets />} />
-                <Route path="/account" element={<Account />} />
+              
                 <Route path='/about' element= {<About />} />
             </Routes>
             <Footer />
@@ -65,4 +67,4 @@ function App() {
     );
 }
 
-export default App
+export default App;

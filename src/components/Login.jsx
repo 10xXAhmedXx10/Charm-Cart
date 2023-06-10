@@ -5,21 +5,22 @@ import { useNavigate } from 'react-router-dom';
 function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setErrorMessage('');
 
     try {
       const response = await axios.post('http://localhost:5000/login', { email, password });
 
       if (response.status === 200) {
-        // Update this as needed based on your response data structure
-        // Assuming you get a token back and want to store it in local storage
         localStorage.setItem('token', response.data.token);
-        navigate('/dashboard'); // Update this to the path of your logged in user page
+        navigate('/home');
       }
     } catch (error) {
+      alert('Invalid email or password');
       console.error(error);
     }
   };
@@ -27,6 +28,7 @@ function LoginPage() {
   return (
     <div>
       <h1>Login</h1>
+      {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
       <form onSubmit={handleSubmit}>
         <label>
           Email:

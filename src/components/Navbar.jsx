@@ -20,9 +20,7 @@ const Navbar = () => {
         <img src={`/assets/images/${isOpen ? 'hamburger.close.svg' : 'hamburger-menu.svg'}`} alt="Menu" className="hamburger-menu"/>
       </div>
       <div className={`nav-links ${isOpen ? 'nav-open' : ''}`}>
-        <NavLink exact to="/clinic" activeClassName="active" className="nav-link" onClick={closeMenu} >
-          Clinic
-        </NavLink>
+      
           <NavLink exact to="/health" activeClassName="active" className="nav-link" onClick={closeMenu} >
           Health
           </NavLink>
@@ -50,9 +48,7 @@ const Navbar = () => {
           <NavLink exact to="/registerorlog" activeClassName="active" className="nav-link-special" onClick={closeMenu} >
             Register/log in
           </NavLink>
-          <NavLink exact to="/account" activeClassName="active" className="nav-link-special" onClick={closeMenu} >
-            Account
-          </NavLink>
+        
           <NavLink exact to="/cart" activeClassName="active" className="" onClick={closeMenu}>
           <img src="/assets/images/cart.png" height={"40px"} alt="shopping cart" />
         </NavLink>
