@@ -5,8 +5,8 @@ import Home from "./pages/Home"
 
 import Womenfashion from './pages/Womenfashion';
 import Books from "./pages/Books"
-
-import Health from "./pages/Health"
+import Contact from './footer/Contact'
+import Gym from "./pages/Gym"
 import Movies from "./pages/Movies"
 import Whereto from './thestorypages/Whereto'
 import Music from "./pages/Music"
@@ -17,8 +17,8 @@ import Tablets from "./pages/Tablets"
 import Registerorlog from "./components/Registerorlog"
 import Login from './components/Login';
 import Cart from "./components/Cart"
-import About from './pages/About';
-import Thestory from './pages/Thestory';
+import About from './footer/About';
+import Thestory from './footer/Thestory';
 import Userregistration from "./components/Userregistration";
 import Businessregistration from "./components/Businessregistration";
 
@@ -39,6 +39,7 @@ function App() {
         <Router>
             <Navbar />
             <Routes>
+                <Route path='contact' element={<Contact />} />
                 <Route path='Whereto' element={<Whereto />} />
                 <Route path='Challenges' element={<Challenges />} />
 <Route path='/Timeline' element={<Timeline />} />
@@ -54,7 +55,7 @@ function App() {
                 <Route path="/home" element={<Home />} />
                 <Route path="/womenfashion" element={<Womenfashion />} />
            
-                <Route path="/health" element={<Health />} />
+                <Route path="/Gym" element={<Gym />} />
                 <Route path="/Kidsfashion" element={<Kidsfashion />} />
                 <Route path="/menfashion" element={<Menfashion />} />
                 <Route path="/movies" element={<Movies />} />

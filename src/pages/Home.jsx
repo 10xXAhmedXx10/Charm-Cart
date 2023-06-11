@@ -118,7 +118,7 @@ function homePage() {
 
     return (
         <div>
-            <div className="video-container">
+            <div className="home-video-container">
                 <video src="assets/videos/homepagebackground.mp4" autoPlay muted loop></video>
             </div>
             <div className='posts-container'>
