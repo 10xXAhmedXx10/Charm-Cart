@@ -4,11 +4,11 @@ import ReactPlayer from 'react-player';
 
 function About() {
     return (
-        <div className="about-container">
+        <div>
 
             <div className="about-video-background">
                 <ReactPlayer
-                    url="/assets/videos/centerbackgroundforaboutpage.mp4"
+                    url="/assets/videos/aboutbackgroundvideo.mp4"
                     playing={true}
                     loop={true}
                     controls={false}

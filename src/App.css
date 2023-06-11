@@ -353,15 +353,6 @@ body, html {
   font-size: 30px;
 }
 
-.about-container {
-  display: flex;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.about-video-background video {
-  object-fit: cover;
-}
 
 
 .about-video-background {
