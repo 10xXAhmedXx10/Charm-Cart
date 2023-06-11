@@ -3,15 +3,16 @@ import { NavLink } from 'react-router-dom';
 
 function Thestory() {
     return (
-        <div className="story-container">
+        <div>
             <NavLink to="/Thestorypage" className="story-link story-link-left">
                 <img className="story-image" src="/assets/images/Storytime.png" alt="thestory" />
                 <div className="text-container">
-                    <h1 className="story-text-right">Find out the story of the website and why it was created 👀.</h1>
+                <h1 className="story-text-right">Find out the story of the website and how it was created 👀.</h1>
                 </div>
+                
             </NavLink>
             
-            <NavLink to="/Storytimeline" className="story-link story-link-right">
+            <NavLink to="/timeline" className="story-link story-link-right">
                 <div className="text-container">
                     <h1 className="story-text-left">Website progress and timeline ⌚</h1>
                 </div>

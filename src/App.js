@@ -8,7 +8,7 @@ import Books from "./pages/Books"
 
 import Health from "./pages/Health"
 import Movies from "./pages/Movies"
-import Beauty from "./pages/Beauty"
+import Whereto from './thestorypages/Whereto'
 import Music from "./pages/Music"
 import Smartphone from "./pages/Smartphones"
 import Menfashion from "./pages/Menfashion"
@@ -23,8 +23,9 @@ import Userregistration from "./components/Userregistration";
 import Businessregistration from "./components/Businessregistration";
 
 import Thestorypage from './thestorypages/Thestorypage';
+import Timeline from './thestorypages/Timeline'
 import CreatePost from './components/CreatePost';
-
+import Challenges from './thestorypages/Challenges'
 import Footer from './components/Footer';
 
 
@@ -38,7 +39,9 @@ function App() {
         <Router>
             <Navbar />
             <Routes>
-
+                <Route path='Whereto' element={<Whereto />} />
+                <Route path='Challenges' element={<Challenges />} />
+<Route path='/Timeline' element={<Timeline />} />
                 <Route path='/Createpost' element={<CreatePost />} />
                 <Route path='/Thestory' element={<Thestory />} />
                 <Route path='/Thestorypage' element={<Thestorypage />} />

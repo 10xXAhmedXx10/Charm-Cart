@@ -407,13 +407,6 @@ body, html {
   font-size: 18px;
 }
 
-
-.story-container {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-}
-
 .story-link {
   display: flex;
   align-items: center;
@@ -451,4 +444,75 @@ body, html {
 
 .story-text-right:hover, .story-text-left:hover {
   color: red;
+}
+
+.story-image {
+  border-radius: 300px ;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 10px;
+  transition: transform 0.3s ease-in-out; 
+  border: 1px solid goldenrod ;
+
+}
+
+.story-image:hover {
+  transform: scale(1.1);
+}
+
+.story-pages {
+  background-image: url('../public/assets/images/thestorypage.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 50px;
+  min-height: 72.7vh;
+}
+
+
+.timeline-page {
+  background-image: url('../public/assets/images/timeandprog.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 50px;
+  min-height: 72.7vh;
+}
+
+
+.challenages-page {
+  background-image: url('../public/assets/images/challenges.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 50px;
+  min-height: 72.7vh;
+}
+
+.whereto-page {
+  background-image: url('../public/assets/images/whereto.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 50px;
+  min-height: 72.7vh;
+}
+
+
+
+
+
+.story-content {
+  font-weight: bold;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 70px;
+  border-radius: 100px;
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.story-content p {
+  font-size: 20px;
 }
