@@ -21,8 +21,8 @@ const Navbar = () => {
       </div>
       <div className={`nav-links ${isOpen ? 'nav-open' : ''}`}>
       
-          <NavLink exact to="/gym" activeClassName="active" className="nav-link" onClick={closeMenu} >
-          Gym
+          <NavLink exact to="/exercise" activeClassName="active" className="nav-link" onClick={closeMenu} >
+          exercise
           </NavLink>
           <NavLink exact to="/womenfashion" activeClassName="active" className="nav-link" onClick={closeMenu} >
           Women Fashion

@@ -518,3 +518,201 @@ body, html {
   background-position: center;
  
 }
+
+
+.create-post-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-post-button  {
+  font-size: 20px;
+  padding: 12px 25px;
+  cursor: pointer;
+  background-color: #109b9b;
+  border: none;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease-in-out;
+}
+
+.create-post-button:hover {
+  background-color: #fa9725;
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.create-post-form {
+  text-align: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 50px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  position: relative;
+}
+
+.create-post-form input,
+.create-post-form textarea {
+  width: 95%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+}
+
+
+
+
+.gym-text p {
+  font-size: 28px;
+text-align: center;
+
+font-family: 'Crimson Text', serif;
+font-family: 'Lobster', cursive;
+font-family: 'Nanum Myeongjo', serif;
+}
+
+.add-item {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.add-item:hover {
+  background-color: #45a049;
+}
+
+
+.cancel-button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.cancel-button:hover {
+  background-color: #da190b;
+}
+
+
+
+.delete-button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 4px;
+  transition-duration: 0.4s;
+}
+
+.delete-button:hover {
+  background-color: #da190b;
+  color: white;
+}
+
+.edit-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 4px;
+  transition-duration: 0.4s;
+}
+
+.edit-button:hover {
+  background-color: #45a049;
+  color: white;
+}
+
+.posts-container1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.post-card {
+  background-color: white;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 250px;
+  margin: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-image {
+  width: 100%;
+  height: 200px; 
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.product-name {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.product-price {
+  font-size: 16px;
+  color: #B12704;
+  font-weight: bold;
+}
+
+.product-description {
+  font-size: 25px;
+  color: #333;
+  flex-grow: 1;
+  overflow-y: auto;
+  margin: 10px 0;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}

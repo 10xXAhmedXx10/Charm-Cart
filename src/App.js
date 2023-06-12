@@ -6,7 +6,7 @@ import Home from "./pages/Home"
 import Womenfashion from './pages/Womenfashion';
 import Books from "./pages/Books"
 import Contact from './footer/Contact'
-import Gym from "./pages/Gym"
+import Exercise from "./pages/Exercise"
 import Movies from "./pages/Movies"
 import Whereto from './thestorypages/Whereto'
 import Music from "./pages/Music"
@@ -55,7 +55,7 @@ function App() {
                 <Route path="/home" element={<Home />} />
                 <Route path="/womenfashion" element={<Womenfashion />} />
            
-                <Route path="/Gym" element={<Gym />} />
+                <Route path="/Exercise" element={<Exercise />} />
                 <Route path="/Kidsfashion" element={<Kidsfashion />} />
                 <Route path="/menfashion" element={<Menfashion />} />
                 <Route path="/movies" element={<Movies />} />
