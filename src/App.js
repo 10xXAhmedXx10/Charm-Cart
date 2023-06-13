@@ -6,17 +6,12 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 
 import Home from "./pages/Home"
 import Account from './components/Account'
-import Womenfashion from './pages/Womenfashion';
-import Books from "./pages/Books"
+
 import Contact from './footer/Contact'
 import Exercise from "./pages/Exercise"
-import Movies from "./pages/Movies"
+
 import Whereto from './thestorypages/Whereto'
-import Music from "./pages/Music"
-import Smartphone from "./pages/Smartphones"
-import Menfashion from "./pages/Menfashion"
-import Kidsfashion from "./pages/Kidsfashion"
-import Tablets from "./pages/Tablets"
+
 import Registerorlog from "./components/Registerorlog"
 import Login from './components/Login';
 import Cart from "./components/Cart"
@@ -88,16 +83,11 @@ const handleLogout = () => {
                 <Route path='/businessregistration' element={<Businessregistration />} />
                 <Route path='/cart' element={<Cart />} />
                 <Route path="/home" element={<Home />} />
-                <Route path="/womenfashion" element={<Womenfashion />} />
+               
            
                 <Route path="/Exercise" element={<Exercise />} />
-                <Route path="/Kidsfashion" element={<Kidsfashion />} />
-                <Route path="/menfashion" element={<Menfashion />} />
-                <Route path="/movies" element={<Movies />} />
-                <Route path="/music" element={<Music />} />
-                <Route path="/smartphones" element={<Smartphone />} />
-                <Route path="/books" element={<Books />} />
-                <Route path="/tablets" element={<Tablets />} />
+              
+             
               
                 <Route path='/about' element= {<About />} />
             </Routes>
