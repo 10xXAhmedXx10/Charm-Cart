@@ -1,120 +1,116 @@
 import React, { useEffect, useState } from 'react';
 import ReactPlayer from 'react-player';
 import CreatePost from '../components/CreatePost';
-import TextAnimation from '../components/TextAnimation';
 
 function Exercise() {
-    const [posts, setPosts] = useState([]);
-    const [editing, setEditing] = useState(null);
-    const [editedPost, setEditedPost] = useState({});
-    const [userRole, setUserRole] = useState('user');
+  const [posts, setPosts] = useState([]);
+  const [postBeingEdited, setPostBeingEdited] = useState(null);
+
+
+  useEffect(() => {
+    fetchPosts();
+  }, []);
+
+  const fetchPosts = async () => {
+    try {
+      const response = await fetch('https://charmcart-backend.onrender.com/exercise');
+      const data = await response.json();
+      setPosts(data);
+    } catch (error) {
+      console.error('Error fetching posts:', error);
+    }
+  };
+
+  const handleDelete = async (itemId) => {
+    try {
+      await fetch(`https://charmcart-backend.onrender.com/exercise/${itemId}`, {
+        method: 'DELETE',
+      });
+      fetchPosts();
+    } catch (error) {
+      console.error('Error deleting post:', error);
+    }
+  };
+
+  const handleEdit = (post) => {
+    setPostBeingEdited(post);
+  };
+
+  const handleEditSubmit = async (updatedPost) => {
+    try {
+      await fetch(`https://charmcart-backend.onrender.com/exercise/${postBeingEdited._id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(updatedPost),
+      });
+      setPostBeingEdited(null);
+      fetchPosts();
+    } catch (error) {
+      console.error('Error editing post:', error);
+    }
+  };
+
   
-    useEffect(() => {
-        const role = localStorage.getItem('role');
-        if (role) {
-          setUserRole(role);
-        }
-        fetchPosts();
-      }, []);
-    
-      const fetchPosts = async () => {
-        try {
-          const response = await fetch('https://charmcart-backend.onrender.com/exercise');
-          const data = await response.json();
-          setPosts(data);
-        } catch (error) {
-          console.error('Error fetching posts:', error);
-        }
-      };
-
-const handleDelete = async (itemId) => {
-    try {
-        await fetch(`https://charmcart-backend.onrender.com/exercise/${itemId}`, {
-            method: 'DELETE',
-        });
-        fetchPosts();
-    } catch (error) {
-        console.error('Error deleting post:', error);
-    }
-};
-
-const handleEdit = async (itemId) => {
-    try {
-        await fetch(`https://charmcart-backend.onrender.com/exercise/${itemId}`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(editedPost),
-        });
-        fetchPosts();
-        setEditing(null);
-    } catch (error) {
-        console.error('Error editing post:', error);
-    }
-};
 
 
-const startEditing = (post) => {
-    setEditing(post._id);
-    setEditedPost(post);
-}
-
-const handleInputChange = (e) => {
-    setEditedPost({ ...editedPost, [e.target.name]: e.target.value });
-};
-
-return (
+  return (
     <div>
-        <div>
-            <ReactPlayer
-                url="/assets/videos/exercise.mp4"
-                playing={true}
-                loop={true}
-                controls={false}
-                muted={true}
-                width="100%"
-                height="100%"
-            />
-        </div>
+      <ReactPlayer
+        url="/assets/videos/exercise.mp4"
+        playing={true}
+        loop={true}
+        controls={false}
+        muted={true}
+        width="100%"
+        height="100%"
+      />
 
+      {postBeingEdited ? (
         <div>
-            <TextAnimation />
-            {userRole === 'business' && (
-            <CreatePost onNewPost={fetchPosts} />
-            )}</div>
-       
-        <div className="posts-container1">
-            {posts.map((post, index) => (
-                <div key={index} className="post-card">
-                    {editing === post._id && userRole === 'business' ? (
-                        <div className="edit-container">
-                            <input name="name" value={editedPost.name} onChange={handleInputChange} />
-                            <input name="image" value={editedPost.image} onChange={handleInputChange} />
-                            <input name="price" value={editedPost.price} onChange={handleInputChange} />
-                            <textarea name="description" value={editedPost.description} onChange={handleInputChange} />
-                            <button className="edit-button" onClick={() => handleEdit(post._id)}>Save</button>
-                            <button className="delete-button" onClick={() => setEditing(null)}>Cancel</button>
-                        </div>
-                    ) : (
-                        <div>
-                            <img className="product-image" src={post.image} alt={post.img} />
-                            <h2 className="product-name">{post.name}</h2>
-                            <h2 className="product-price">${Number(post.price).toFixed(2)}</h2>
-                            <p className="product-description">{post.description}</p>
-                            {userRole === 'business' && (
-    <div className="buttons-container">
-        <button className="delete-button" onClick={() => handleDelete(post._id)}>Delete</button>
-        <button className="edit-button" onClick={() => startEditing(post)}>Edit</button>
-    </div>
-)}
-                        </div>
-                    )}
-                </div>
-            ))}
+          <h3>Edit Post</h3>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              handleEditSubmit({
+                name: e.target.name.value,
+                price: e.target.price.value,
+                image: e.target.image.value,
+                description: e.target.description.value,
+              });
+            }}
+          >
+            <input type="text" name="name" defaultValue={postBeingEdited.name} />
+            <input type="number" name="price" defaultValue={postBeingEdited.price} />
+            <input type="text" name="image" defaultValue={postBeingEdited.image} />
+            <textarea name="description" defaultValue={postBeingEdited.description} />
+            <button type="submit">Save Changes</button>
+            <button type="button" onClick={() => setPostBeingEdited(null)}>Cancel</button>
+          </form>
         </div>
+      ) : (
+        <div>
+          <CreatePost onNewPost={fetchPosts} />
+
+          <div className="posts-container">
+            {posts.map((post, index) => (
+              <div key={index} className="post-card">
+                <img className="product-image" src={post.image} alt={post.image} />
+                <h2 className="product-name">{post.name}</h2>
+                <h2 className="product-price">${Number(post.price).toFixed(2)}</h2>
+                <p className="product-description">{post.description}</p>
+                <div className="post-actions">
+                  <button className="edit-button" onClick={() => handleEdit(post)}>Edit</button>
+                  <button className="delete-button" onClick={() => handleDelete(post._id)}>Delete</button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
-);
+  );
 }
 
 export default Exercise;

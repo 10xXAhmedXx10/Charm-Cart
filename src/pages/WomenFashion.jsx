@@ -7,6 +7,7 @@ const Data = [
         title: 'Eycuro Womens Linen Pants Summer Casual Drawstring ',
         img: '/assets/images/wf1.jpg',
         price: "$16.99",
+    
         star: "🌟🌟🌟🌟🌟"
 
     },
