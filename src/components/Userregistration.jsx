@@ -10,7 +10,7 @@ function UserRegistration() {
     event.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:8080/userregistration', { name, email, password });
+      const response = await axios.post('http://localhost:10000/userregistration', { name, email, password });
       console.log(response.data);
 
 
