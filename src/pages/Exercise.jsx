@@ -19,7 +19,7 @@ function Exercise() {
     
       const fetchPosts = async () => {
         try {
-          const response = await fetch('http://localhost:10000/exercise');
+          const response = await fetch('https://charmcart-backend.onrender.com/exercise');
           const data = await response.json();
           setPosts(data);
         } catch (error) {
@@ -29,7 +29,7 @@ function Exercise() {
 
 const handleDelete = async (itemId) => {
     try {
-        await fetch(`http://localhost:10000/exercise/${itemId}`, {
+        await fetch(`https://charmcart-backend.onrender.com/exercise/${itemId}`, {
             method: 'DELETE',
         });
         fetchPosts();
@@ -40,7 +40,7 @@ const handleDelete = async (itemId) => {
 
 const handleEdit = async (itemId) => {
     try {
-        await fetch(`http://localhost:10000/exercise/${itemId}`, {
+        await fetch(`https://charmcart-backend.onrender.com/exercise/${itemId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

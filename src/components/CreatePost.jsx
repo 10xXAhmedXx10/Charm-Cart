@@ -18,7 +18,7 @@ const CreatePost = ({ onNewPost }) => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await fetch('http://localhost:10000/exercise', {
+            const response = await fetch('https://charmcart-backend.onrender.com/exercise', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

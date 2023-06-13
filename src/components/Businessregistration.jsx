@@ -12,7 +12,7 @@ function Businessregistration() {
     event.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:10000/businessregister', { name, email, password, productType });
+      const response = await axios.post('https://charmcart-backend.onrender.com/businessregister', { name, email, password, productType });
 
   
       if (response.status === 200) {
