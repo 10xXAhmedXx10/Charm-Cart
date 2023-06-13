@@ -892,3 +892,53 @@ font-family: 'Nanum Myeongjo', serif;
   font-weight: bold;
   font-size: 16px;
 }
+
+
+.edit-post {
+  background-color: #f5f5f5;
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-input,
+.edit-textarea {
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.edit-input {
+  height: 30px;
+}
+
+.edit-textarea {
+  height: 100px;
+}
+
+.save-button,
+.cancel-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+  border-radius: 3px;
+}
+
+.cancel-button {
+  background-color: #f44336;
+}
+
+.save-button:hover,
+.cancel-button:hover {
+  opacity: 0.8;
+}

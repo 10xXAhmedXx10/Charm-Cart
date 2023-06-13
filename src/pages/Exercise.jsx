@@ -68,27 +68,57 @@ function Exercise() {
       />
 
       {postBeingEdited ? (
-        <div>
-          <h3>Edit Post</h3>
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              handleEditSubmit({
-                name: e.target.name.value,
-                price: e.target.price.value,
-                image: e.target.image.value,
-                description: e.target.description.value,
-              });
-            }}
-          >
-            <input type="text" name="name" defaultValue={postBeingEdited.name} />
-            <input type="number" name="price" defaultValue={postBeingEdited.price} />
-            <input type="text" name="image" defaultValue={postBeingEdited.image} />
-            <textarea name="description" defaultValue={postBeingEdited.description} />
-            <button type="submit">Save Changes</button>
-            <button type="button" onClick={() => setPostBeingEdited(null)}>Cancel</button>
-          </form>
-        </div>
+      <div className="edit-post">
+      <h3>Edit Post</h3>
+      <form
+        className="edit-form"
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleEditSubmit({
+            name: e.target.name.value,
+            price: e.target.price.value,
+            image: e.target.image.value,
+            description: e.target.description.value,
+          });
+        }}
+      >
+        <input
+          className="edit-input"
+          type="text"
+          name="name"
+          defaultValue={postBeingEdited.name}
+        />
+        <input
+          className="edit-input"
+          type="number"
+          name="price"
+          defaultValue={postBeingEdited.price}
+        />
+        <input
+          className="edit-input"
+          type="text"
+          name="image"
+          defaultValue={postBeingEdited.image}
+        />
+        <textarea
+          className="edit-textarea"
+          name="description"
+          defaultValue={postBeingEdited.description}
+        />
+        <button className="save-button" type="submit">
+          Save Changes
+        </button>
+        <button
+          className="cancel-button"
+          type="button"
+          onClick={() => setPostBeingEdited(null)}
+        >
+          Cancel
+        </button>
+      </form>
+    </div>
+
+
       ) : (
         <div>
           <CreatePost onNewPost={fetchPosts} />
