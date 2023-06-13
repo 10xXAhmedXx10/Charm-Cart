@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 
-import Home from "./pages/Home"
 
+
+import Home from "./pages/Home"
+import Account from './components/Account'
 import Womenfashion from './pages/Womenfashion';
 import Books from "./pages/Books"
 import Contact from './footer/Contact'
@@ -35,10 +38,42 @@ import "./App.css"
 
 
 function App() {
+    const [userName, setUserName] = useState('');
+
+    useEffect(() => {
+      
+        const storedUserName = localStorage.getItem('username');
+
+        if (storedUserName) {
+
+
+
+
+            
+            setUserName(storedUserName);
+        }
+    }, []);
+
+    const handleSetUserName = (name) => {
+        localStorage.setItem('username', name);
+        setUserName(name);
+    };
+
+
+const handleLogout = () => {
+   
+    localStorage.removeItem('username');
+  
+    setUserName('');
+};
+
     return (
         <Router>
-            <Navbar />
+            <Navbar userName={userName} onLogout={handleLogout} />
             <Routes>
+            <Route path="/account" element={<Account name={userName} />} />
+                <Route path='/login' element={<Login onLogin={handleSetUserName} />} />
+           
                 <Route path='contact' element={<Contact />} />
                 <Route path='Whereto' element={<Whereto />} />
                 <Route path='Challenges' element={<Challenges />} />
@@ -47,7 +82,7 @@ function App() {
                 <Route path='/Thestory' element={<Thestory />} />
                 <Route path='/Thestorypage' element={<Thestorypage />} />
                 <Route path="/" element={<Navigate to="/Home" />} />
-                <Route path='/login' element={<Login />} />
+               
                 <Route path='/registerorlog' element={<Registerorlog />} />
                 <Route path="/userregistration" element={<Userregistration />} />
                 <Route path='/businessregistration' element={<Businessregistration />} />

@@ -1,14 +1,22 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import "../App.css";
 
-const Navbar = () => {
+import { NavLink, useNavigate } from 'react-router-dom';
+
+
+const Navbar = ({ onLogout, userName }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const closeMenu = () => {
     setIsOpen(false);
   };
 
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    onLogout();
+    closeMenu();
+    navigate('/login');
+  };
 
   return (
     <nav className="navbar">
@@ -45,13 +53,32 @@ const Navbar = () => {
           <NavLink exact to="/tablets" activeClassName="active" className="nav-link" onClick={closeMenu} >
           Tablets
           </NavLink>
-          <NavLink exact to="/registerorlog" activeClassName="active" className="nav-link-special" onClick={closeMenu} >
-            Register/log in
-          </NavLink>
         
-          <NavLink exact to="/cart" activeClassName="active" className="" onClick={closeMenu}>
-          <img src="/assets/images/cart.png" height={"40px"} alt="shopping cart" />
+        
+          {userName ? (
+          
+          <>
+            <NavLink exact to="/account" activeClassName="active" className="nav-link-special" onClick={closeMenu}>
+            Account
+          </NavLink>
+          <button className="logout" onClick={handleLogout}>
+            Logout
+          </button>
+        </>
+        ) : (
+          
+          <NavLink exact to="/registerorlog" activeClassName="active" className="nav-link-special" onClick={closeMenu}>
+          Register/log in
         </NavLink>
+      )}
+      
+          
+
+      {userName && (
+          <NavLink exact to="/cart" activeClassName="active" className="" onClick={closeMenu}>
+            <img src="/assets/images/cart.png" height={"40px"} alt="shopping cart" />
+          </NavLink>
+          )}
         </div>
     </nav>
   );
