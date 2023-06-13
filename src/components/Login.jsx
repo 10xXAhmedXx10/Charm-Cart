@@ -14,7 +14,7 @@ function LoginPage({ onLogin }) {
 
     try {
       const response = await axios.post(
-        'http://localhost:5000/login',
+        'https://charmcart-backend.onrender.com/login',
         { email, password },
         {
           headers: {
@@ -48,7 +48,7 @@ function LoginPage({ onLogin }) {
   
   const handleBusinessLogin = async (email, password) => {
     try {
-      const response = await fetch('http://localhost:5000/businesslogin', {
+      const response = await fetch('https://charmcart-backend.onrender.com/businesslogin', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
