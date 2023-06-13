@@ -96,8 +96,11 @@ function Exercise() {
           <div className="posts-container">
             {posts.map((post, index) => (
               <div key={index} className="post-card">
-                <img className="product-image" src={post.image} alt={post.image} />
+                
                 <h2 className="product-name">{post.name}</h2>
+                
+                <img className="product-image" src={post.image} alt={post.image} />
+                
                 <h2 className="product-price">${Number(post.price).toFixed(2)}</h2>
                 <p className="product-description">{post.description}</p>
                 <div className="post-actions">
