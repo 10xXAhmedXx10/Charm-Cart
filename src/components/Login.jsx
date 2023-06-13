@@ -8,44 +8,114 @@ function LoginPage({ onLogin }) {
   const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
 
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     setErrorMessage('');
 
     try {
-        const response = await axios.post('http://localhost:5000/login', { email, password });
-
-        if (response.status === 200) {
-            localStorage.setItem('token', response.data.token);
-            onLogin(response.data.name);
-            navigate('/home');
+      const response = await axios.post(
+        'http://localhost:5000/login',
+        { email, password },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
         }
+      );
+
+      if (response.status === 200) {
+        localStorage.setItem('token', response.data.token);
+        onLogin(response.data.name);
+        navigate('/home');
+      }
     } catch (error) {
-        alert('Please check your email and password.');
-        console.error(error);
+      if (error.response) {
+        
+        console.error('Error Data:', error.response.data);
+        console.error('Error Status:', error.response.status);
+        console.error('Error Headers:', error.response.headers);
+      } else if (error.request) {
+        
+        console.error('Error Request:', error.request);
+      } else {
+        
+        console.error('Error Message:', error.message);
+      }
+      alert('Please check your email and password. also please make sure you are choosing the right type of account');
     }
-};
-return (
-  <div className="login-container">
-    <h1 className="login-title">Login</h1>
-    {errorMessage && <p className="error-message">{errorMessage}</p>}
-    <form className="login-form" onSubmit={handleSubmit}>
-      <label className="input-label">
-        Email:
-        <input type="email" value={email} onChange={e => setEmail(e.target.value)} required className="input-field" />
-      </label>
-      <label className="input-label">
-        Password:
-        <input type="password" value={password} onChange={e => setPassword(e.target.value)} required className="input-field" />
-      </label>
-      <button type="submit" className="login-button">Login</button>
-    </form>
-    <div>
-      <h2><a href="/registerorlog">New user ? click here</a></h2>
+  };
+
+  
+  const handleBusinessLogin = async (email, password) => {
+    try {
+      const response = await fetch('http://localhost:5000/businesslogin', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+  
+      const data = await response.json();
+  
+      if (response.ok) {
+        
+        localStorage.setItem('role', data.role);
+       
+        onLogin(data.name);
+        navigate('/home');
+      } else {
+        
+        console.error('Login failed:', data.alert);
+        alert('Invalid email or password. please make sure you are choosing the right type of account');
+      }
+    } catch (error) {
+      console.error('Error during business login:', error);
+    }
+  };
+  return (
+    <div className="login-container">
+      <h1 className="login-title">Login</h1>
+      {errorMessage && <p className="error-message">{errorMessage}</p>}
+      <form className="login-form" onSubmit={handleSubmit}>
+        <label className="input-label">
+          Email:
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            className="input-field"
+          />
+        </label>
+        <label className="input-label">
+          Password:
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            className="input-field"
+          />
+        </label>
+        <button type="submit" className="login-button">
+          Login
+        </button>
+        <button
+          type="button"
+          className="business-login-button"
+          onClick={() => handleBusinessLogin(email, password)}
+        >
+          Business Login
+        </button>
+      </form>
+      <div>
+        <h2>
+          <a href="/registerorlog">New user? Click here</a>
+        </h2>
+      </div>
     </div>
-  </div>
-);
+  );
 }
 
 export default LoginPage;
