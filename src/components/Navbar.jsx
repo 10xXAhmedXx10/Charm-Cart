@@ -30,16 +30,16 @@ const Navbar = ({ onLogout, userName }) => {
       <div className={`nav-links ${isOpen ? 'nav-open' : ''}`}>
       
           <NavLink exact to="/exercise" activeClassName="active" className="nav-link" onClick={closeMenu} >
-          exercise
+          Exercise
           </NavLink>
-          <NavLink exact to="/womenfashion" activeClassName="active" className="nav-link" onClick={closeMenu} >
-          Women Fashion
+          <NavLink exact to="/charmcarthome" activeClassName="active" className="nav-link" onClick={closeMenu} >
+          CharmCart Home
           </NavLink>
-          <NavLink exact to="/menfashion" activeClassName="active" className="nav-link" onClick={closeMenu} >
-          Men Fashion
+          <NavLink exact to="/pets" activeClassName="active" className="nav-link" onClick={closeMenu} >
+          Pets
           </NavLink>
-          <NavLink exact to="/kidsfashion" activeClassName="active" className="nav-link" onClick={closeMenu} >
-          Kids Fashion
+          <NavLink exact to="/WomenFashion" activeClassName="active" className="nav-link" onClick={closeMenu} >
+          Women's Fashion
           </NavLink>
           <NavLink exact to="/movies" activeClassName="active" className="nav-link" onClick={closeMenu} >
           Movies

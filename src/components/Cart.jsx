@@ -1,8 +1,11 @@
 import React from "react";
 
 function Cart() {
-    return <h1>Hello yall</h1>
+  return (
+    <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>
+      <img className="cardimg" src="/assets/images/503ServiceUnavailable.gif" alt="" />
+    </div>
+  );
 }
-
 
 export default Cart;

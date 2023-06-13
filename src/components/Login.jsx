@@ -73,6 +73,12 @@ function LoginPage({ onLogin }) {
       console.error('Error during business login:', error);
     }
   };
+
+
+  const handleClick = () => {
+    navigate('/registerorlog');
+  };
+
   return (
     <div className="login-container">
       <h1 className="login-title">Login</h1>
@@ -110,9 +116,11 @@ function LoginPage({ onLogin }) {
         </button>
       </form>
       <div>
-        <h2>
-          <a href="/registerorlog">New user? Click here</a>
-        </h2>
+      
+        <button class="button user" onClick={handleClick}>New user? Click here</button>
+
+
+        
       </div>
     </div>
   );

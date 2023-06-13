@@ -3,14 +3,15 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 
 
-
+import WomenFashion from './pages/WomenFashion'
 import Home from "./pages/Home"
 import Account from './components/Account'
-
+import CharmCartHome from './pages/CharmCartHome'
 import Contact from './footer/Contact'
 import Exercise from "./pages/Exercise"
 
 import Whereto from './thestorypages/Whereto'
+import Pets from './pages/Pets'
 
 import Registerorlog from "./components/Registerorlog"
 import Login from './components/Login';
@@ -66,6 +67,7 @@ const handleLogout = () => {
         <Router>
             <Navbar userName={userName} onLogout={handleLogout} />
             <Routes>
+            <Route path='Pets' element={<Pets />} />
             <Route path="/account" element={<Account name={userName} />} />
                 <Route path='/login' element={<Login onLogin={handleSetUserName} />} />
            
@@ -83,11 +85,11 @@ const handleLogout = () => {
                 <Route path='/businessregistration' element={<Businessregistration />} />
                 <Route path='/cart' element={<Cart />} />
                 <Route path="/home" element={<Home />} />
-               
+               <Route path='CharmCartHome' element={<CharmCartHome />} />
            
                 <Route path="/Exercise" element={<Exercise />} />
               
-             
+             <Route path='WomenFashion' element={<WomenFashion />} />
               
                 <Route path='/about' element= {<About />} />
             </Routes>

@@ -15,13 +15,19 @@ const CreatePost = ({ onNewPost }) => {
         setIsOpen(false);
     };
 
+
+
+
+
     const handleSubmit = async (event) => {
         event.preventDefault();
+        const token = localStorage.getItem('token');
         try {
             const response = await fetch('https://charmcart-backend.onrender.com/exercise', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
                 },
                 body: JSON.stringify({ name, price, image, description }),
             });
