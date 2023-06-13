@@ -18,7 +18,7 @@ const CreatePost = ({ onNewPost }) => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await fetch('http://localhost:5000/exercise', {
+            const response = await fetch('http://localhost:8080/exercise', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
